@@ -11,6 +11,7 @@ import fire
 import questionary
 from pathlib import Path
 
+
 from qualifier.utils.fileio import load_csv
 
 from qualifier.utils.calculators import (
@@ -37,6 +38,13 @@ def load_bank_data():
         sys.exit(f"Oops! Can't find this path: {csvpath}")
 
     return load_csv(csvpath)
+
+
+def save_csv: 
+
+
+
+
 
 
 def get_applicant_info():
