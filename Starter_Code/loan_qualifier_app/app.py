@@ -142,21 +142,6 @@ def save_qualifying_loans(qualifying_loans):
         "Sorry, your login was not successful. Your PIN does not link to an account. Please check your PIN and try again."
     )
 
-    # for loans in qualifying_loans:
-    #     if qualifying_loans == false:
-    #         print (f"There were {len(qualifying_loans)} qualifying loans")
-    #         return
-
-    
-    
-    # elif question == "Yes":
-    #     return save_csv
-    # elif question == "No":
-    #     sys.exit(f"Goodbye")
-
-    # return save_qualifying_loans 
-
-
 
 
 def run():
