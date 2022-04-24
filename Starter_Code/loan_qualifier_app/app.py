@@ -111,21 +111,16 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     answer = questionary.confirm("Would you like to save the results?").ask()
-    message = questionary.text("Where would you like to save the csv file?").ask()
+    message = questionary.path("Where would you like to save the csv file?").ask()
     
     if len(qualifying_loans) == 0:
-        sys.exit("Please review your life decisions and come back at a later time.")
+        sys.exit("There are no qualifying loans at this time.")
         #prompt user for CSV path (Variable), next step is save_csv file (qualifying loans, csvpath)
     else:
      answer = questionary.confirm("Would you like to save the results?").ask()
-     message = questionary.text("Where would you like to save the csv file?").ask()
+     message = questionary.filepath("Where would you like to save the csv file?").ask()
     
    
-   
-    #elif:
-        #save_csv - questionary = no
-        #sys.exit("Thank you for having your life together! Enjoy your day!")
-   # elif:
 
 
 def run():
