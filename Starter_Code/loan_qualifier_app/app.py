@@ -7,10 +7,12 @@ Example:
     $ python app.py
 """
 
+
 import sys
 import fire
 import questionary
 from pathlib import Path
+
 
 
 from qualifier.utils.fileio import (load_csv, save_csv)
@@ -113,9 +115,46 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    
+
+    question = questionary.confirm("Would you like to save your qualifying loans?").ask()
+    save_csv = questionary.text("Please enter the file path for the csv file you would like to save your results to. (.csv):").ask()
+
+    #PSUEDO CODE
+    if qualifying loans, then I should be able to opt out of saving the file (this is the question variable)
+    elif question == No, return 
+    elif question == Yes,  the tool should prompt for a file path to save the file. (save_csv variable)
+    else no qualifying_loans, then exit (return)
+
+     # Calls qualifying_loans function to confirm loans exist.
+    if qualifying_loans == False:
+        question = sys.exit("Sorry, You have no qualifiying loans.")
         
 
+    # If loans exist, calls qualifying_loans and then ....
+    loans = qualifying_loans()
+
+    for loans in qualifying_loans:
+        if loans == True:
+            return loans
+
+    # If no account was returned above, exit with an error
+    sys.exit(
+        "Sorry, your login was not successful. Your PIN does not link to an account. Please check your PIN and try again."
+    )
+
+    # for loans in qualifying_loans:
+    #     if qualifying_loans == false:
+    #         print (f"There were {len(qualifying_loans)} qualifying loans")
+    #         return
+
+    
+    
+    # elif question == "Yes":
+    #     return save_csv
+    # elif question == "No":
+    #     sys.exit(f"Goodbye")
+
+    # return save_qualifying_loans 
 
 
 
