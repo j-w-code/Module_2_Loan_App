@@ -1,2 +1,1 @@
-# Module_2_Loan_App
-an automated loan approval application 
+Lender,Max Loan Amount,Max LTV,Max DTI,Min Credit Score,Interest Rate

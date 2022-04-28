@@ -7,6 +7,7 @@ Example:
     $ python app.py
 """
 import csv
+from email import message
 import sys
 import fire
 import questionary
@@ -109,16 +110,16 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
+    if (len(qualifying_loans) == 0):
+        sys.exit("There are no qualifying loans at this time.")
+        #prompt user for CSV path (Variable), next step is save_csv file (qualifying loans, csvpath)# @TODO: Complete the usability dialog for savings the CSV Files.
+
     answer = questionary.confirm("Would you like to save the results?").ask()
     message = questionary.path("Where would you like to save the csv file?").ask()
     
-    if len(qualifying_loans) == 0:
-        sys.exit("There are no qualifying loans at this time.")
-        #prompt user for CSV path (Variable), next step is save_csv file (qualifying loans, csvpath)
-    else:
-     answer = questionary.confirm("Would you like to save the results?").ask()
-     message = questionary.filepath("Where would you like to save the csv file?").ask()
+    
+    if(len(qualifying_loans) > 0):
+        save_csv(qualifying_loans, csvpath)
     
    
 
