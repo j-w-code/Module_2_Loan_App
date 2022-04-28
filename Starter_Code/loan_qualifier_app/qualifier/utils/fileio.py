@@ -50,4 +50,4 @@ def save_csv(qualifying_loans, csvpath):
         csvwriter.writerow(header)
         
         for row in qualifying_loans:
-            csvwriter.writrerow(row.values()) 
+            csvwriter.writerows(row.values()) 
